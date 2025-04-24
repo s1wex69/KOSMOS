@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Современные миссии на Марс — Космос на моём экране</title>
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Swiper CSS -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/swiper/swiper-bundle.min.css"
+  />
+</head>
+<body>
+  <!-- Header/Nav -->
+  <header class="site-header">
+    <nav class="nav">
+      <a href="index.html">Главная</a>
+      <a href="page1.html">Инциденты</a>
+      <a href="page2.html">Факты о Марсе</a>
+      <a href="page3.html" class="active">Миссии</a>
+      <a href="page4.html">Технологии</a>
+      <a href="contacts.html">Контакты</a>
+    </nav>
+  </header>
+
+    <!-- Слайдер миссий по датам -->
+    <section class="missions-slider">
+      <h2>Хронология ключевых миссий</h2>
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="images/viking-landing.jpg" alt="Viking 1, июнь 1976">
+            <p class="slide-caption"><strong>Viking 1</strong> — посадка 20 июля 1976</p>
+          </div>
+          <div class="swiper-slide">
+            <img src="images/pathfinder-landing.jpg" alt="Pathfinder, июль 1997">
+            <p class="slide-caption"><strong>Pathfinder</strong> — посадка 4 июля 1997</p>
+          </div>
+          <div class="swiper-slide">
+            <img src="images/curiosity-landing.jpg" alt="Curiosity, август 2012">
+            <p class="slide-caption"><strong>Curiosity</strong> — посадка 6 августа 2012</p>
+          </div>
+          <div class="swiper-slide">
+            <img src="images/perseverance-landing.jpg" alt="Perseverance, февраль 2021">
+            <p class="slide-caption"><strong>Perseverance</strong> — посадка 18 февраля 2021</p>
+          </div>
+          <div class="swiper-slide">
+            <img src="images/ingenuity-first-flight.jpg" alt="Ingenuity, апрель 2021">
+            <p class="slide-caption"><strong>Ingenuity</strong> — первый полёт 19 апреля 2021</p>
+          </div>
+        </div>
+        <!-- Стрелки навигации -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <!-- Пагинация -->
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2025 Космос на моём экране</p>
+    <p>Источники:
+      <a href="https://mars.nasa.gov/">NASA Mars</a>,
+      <a href="https://en.wikipedia.org/wiki/Mars_mission">Wikipedia</a>
+    </p>
+  </footer>
+
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    // Инициализация слайдера
+    const missionsSwiper = new Swiper('.swiper-container', {
+      loop: true,
+      autoplay: {
+        delay: 4000,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    });
+  </script>
+</body>
+</html>

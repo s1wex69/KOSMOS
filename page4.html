@@ -1,0 +1,84 @@
+\<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Космо-технологии в быту — Космос на моём экране</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Header/Nav -->
+  <header class="site-header">
+    <nav class="nav">
+      <a href="index.html">Главная</a>
+      <a href="page1.html">Инциденты</a>
+      <a href="page2.html">Факты о Марсе</a>
+      <a href="page3.html">Миссии</a>
+      <a href="page4.html" class="active">Технологии</a>
+      <a href="contacts.html">Контакты</a>
+    </nav>
+  </header>
+
+  <main class="content">
+    <h1>Космо-технологии в быту</h1>
+
+    <!-- Квиз с показом фото -->
+    <section class="quiz">
+      <h2>Тест: что из этого — спин-офф NASA?</h2>
+      <p>Выберите правильный ответ:</p>
+      <select id="quizSelect">
+        <option value="">— выберите —</option>
+        <option value="phone">Сотовый телефон</option>
+        <option value="foam">Память-пена</option>
+        <option value="wifi">Wi-Fi</option>
+        <option value="thermometer">Инфракрасный термометр</option>
+      </select>
+      <button id="quizBtn" class="btn">Проверить</button>
+      <p id="quizResult"></p>
+      <div id="quizImageContainer">
+        <img id="quizImage" src="" alt="" style="max-width:100%; display:none;">
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2025 Космос на моём экране</p>
+    <p>Источники:
+      <a href="https://spinoff.nasa.gov/">NASA Spinoff</a>,
+      <a href="https://www.nasa.gov/technology">NASA Tech</a>
+    </p>
+  </footer>
+
+  <script>
+    const mapping = {
+      foam: {
+        src: 'images/memory-foam.jpg',
+        alt: 'Память-пена'
+      },
+      thermometer: {
+        src: 'images/infrared-thermometer.jpg',
+        alt: 'Инфракрасный термометр'
+      }
+    };
+
+    document.getElementById('quizBtn').addEventListener('click', () => {
+      const sel = document.getElementById('quizSelect').value;
+      const res = document.getElementById('quizResult');
+      const img = document.getElementById('quizImage');
+
+      if (!sel) {
+        res.textContent = 'Пожалуйста, выберите вариант.';
+        img.style.display = 'none';
+      } else if (mapping[sel]) {
+        res.textContent = 'Верно! Вот изображение:';
+        img.src = mapping[sel].src;
+        img.alt = mapping[sel].alt;
+        img.style.display = 'block';
+      } else {
+        res.textContent = 'Неверно, попробуйте ещё.';
+        img.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>

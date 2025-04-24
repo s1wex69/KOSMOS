@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Инциденты миссий на Марсе</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+</head>
+<body>
+  <!-- Header/Nav -->
+  <header class="site-header">
+    <nav class="nav">
+      <a href="index.html">Главная</a>
+      <a href="page1.html" class="active">Инциденты</a>
+      <a href="page2.html">Факты о Марсе</a>
+      <a href="page3.html">Миссии</a>
+      <a href="page4.html">Технологии</a>
+      <a href="contacts.html">Контакты</a>
+    </nav>
+  </header>
+
+  <main class="content">
+    <h1>Необычные происшествия на Марсе</h1>
+
+    <!-- Слайдер с инцидентами -->
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="images/ingenuity-crash.jpg" alt="Крушение Ingenuity">
+          <p class="slide-caption">Первый "крик" Ingenuity при экстренной посадке</p>
+        </div>
+        <div class="swiper-slide">
+          <img src="images/curiosity-hammer.jpg" alt="Слом молотка у Curiosity">
+          <p class="slide-caption">Curiosity потерял инструмент для бурения</p>
+        </div>
+        <div class="swiper-slide">
+          <img src="images/opportunity-sandstorm.jpg" alt="Песчаная буря">
+          <p class="slide-caption">Opportunity поглотила гигантская песчаная буря</p>
+        </div>
+      </div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+
+    <!-- Аккордеон с описаниями -->
+    <section class="accordion">
+      <h2>Подробности инцидентов</h2>
+      <div class="item">
+        <button class="accordion-btn">Срыв полёта Ingenuity</button>
+        <div class="accordion-content">
+          <p>В июне 2024 года малый вертолёт Ingenuity столкнулся с внезапным понижением давления в аккумуляторе — экстренная посадка спаси его, но на один виток меньше фюзеляжа было повреждено.</p>
+        </div>
+      </div>
+      <div class="item">
+        <button class="accordion-btn">Поломка буры Curiosity</button>
+        <div class="accordion-content">
+          <p>В марте 2023 «Curiosity» поломал буровой молоток при попытке взять пробу грунта, но перешёл на альтернативный режим — использует сверло меньшего диаметра.</p>
+        </div>
+      </div>
+      <div class="item">
+        <button class="accordion-btn">Песчаная буря и Opportunity</button>
+        <div class="accordion-content">
+          <p>В 2018-м гигантская буря лишила «Opportunity» энергии — связь восстановить не удалось, миссия завершилась.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2025 Космос на моём экране</p>
+    <p>Источники:
+      <a href="https://mars.nasa.gov/">NASA Mars</a>,
+      <a href="https://tass.ru/">TASS</a>
+    </p>
+  </footer>
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

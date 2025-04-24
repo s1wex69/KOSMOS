@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Контакты — Космос на моём экране</title>
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Подключаем иконки для социальных сетей (например, FontAwesome CDN) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-pap+1lV+IGkDBCPQ7lKfjpK0T0VXLGz8tYThNqA4c5iySY1t0p1H+9sn6mYdJ8VjDRY+I5dJtHIQ6uS6H1v9GA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+</head>
+<body>
+  <!-- Header/Nav -->
+  <header class="site-header">
+    <nav class="nav">
+      <a href="index.html">Главная</a>
+      <a href="page1.html">Инциденты</a>
+      <a href="page2.html">Факты о Марсе</a>
+      <a href="page3.html">Миссии</a>
+      <a href="page4.html">Технологии</a>
+      <a href="contacts.html" class="active">Контакты</a>
+    </nav>
+  </header>
+
+  <main class="content">
+    <h1>Свяжитесь с нами</h1>
+    <p>Будем рады вашим вопросам, отзывам и предложениям!</p>
+    <!-- Контактная форма -->
+    <section class="contact-form">
+      <form id="contactForm" action="https://formspree.io/f/your-form-id" method="POST">
+        <label for="name">Имя:</label>
+        <input type="text" id="name" name="name" required placeholder="Ваше имя">
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="_replyto" required placeholder="email@example.com">
+
+        <label for="message">Сообщение:</label>
+        <textarea id="message" name="message" rows="5" required placeholder="Напишите ваше сообщение..."></textarea>
+
+        <button type="submit" class="btn">Отправить</button>
+      </form>
+      <p id="formFeedback" class="feedback"></p>
+    </section>
+
+    <!-- Карта офиса в модальном окне -->
+    <section class="map-section">
+      <h2>Наш офис на Марсе (шутка!)</h2>
+      <button id="openMapBtn" class="btn">Показать местоположение</button>
+
+      <div id="mapModal" class="modal">
+        <div class="modal-content">
+          <span class="close-btn">&times;</span>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241317.1160179266!2d-74.24441932421239!3d40.69767006347144!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQxJzU4LjAiTiA3NMKwMTQnMTUuMCJX!5e0!3m2!1sru!2sru!4v1618888888888!5m2!1sru!2sru"
+            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+          ></iframe>
+          <p>Адрес: 1 Mars Colony Way, Olympus Mons, Mars</p>
+        </div>
+      </div>
+    </section>
+
+  <footer class="site-footer">
+    <p>© 2025 Космос на моём экране</p>
+    <p>Источники:
+      <a href="https://formspree.io/">Formspree</a>,
+      <a href="https://fontawesome.com/">FontAwesome</a>
+    </p>
+  </footer>
+
+  <script>
+    // Всплывающее подтверждение отправки формы
+    const form = document.getElementById('contactForm');
+    const feedback = document.getElementById('formFeedback');
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      feedback.textContent = 'Спасибо! Ваше сообщение отправлено.';
+      form.reset();
+    });
+
+    // Модальное окно с картой
+    const openMapBtn = document.getElementById('openMapBtn');
+    const modal = document.getElementById('mapModal');
+    const closeBtn = modal.querySelector('.close-btn');
+    openMapBtn.onclick = () => modal.style.display = 'block';
+    closeBtn.onclick = () => modal.style.display = 'none';
+    window.onclick = e => { if (e.target === modal) modal.style.display = 'none'; };
+  </script>
+</body>
+</html>

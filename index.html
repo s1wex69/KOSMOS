@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Космос на моём экране</title>
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Подключаем Swiper -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/swiper/swiper-bundle.min.css"
+  />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a href="index.html">Главная</a>
+      <a href="page1.html">Инциденты</a>
+      <a href="page2.html">Факты о планетах</a>
+      <a href="page3.html">Исследования</a>
+      <a href="page4.html">Технологии</a>
+      <a href="contacts.html">Контакты</a>
+    </nav>
+  </header>
+
+  <main class="content">
+    <h1>Добро пожаловать в «Космос на моём экране»</h1>
+    <p>Здесь вы найдёте удивительные истории и факты о космосе.</p>
+
+    <!-- Слайдер -->
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="images/slide1.jpg" alt="Космический шаттл">
+        </div>
+        <div class="swiper-slide">
+          <img src="images/slide2.jpg" alt="Планета Марс">
+        </div>
+        <div class="swiper-slide">
+          <img src="images/slide3.jpg" alt="Астронавт">
+        </div>
+      </div>
+      <!-- Навигационные стрелки -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+
+    <!-- Аккордеон -->
+    <section class="accordion">
+      <h2>Что вы узнаете на сайте</h2>
+      <div class="item">
+        <button class="accordion-btn">Необычные происшествия</button>
+        <div class="accordion-content">
+          <p>Случаи отключения связи, спасение экипажа и многое другое.</p>
+        </div>
+      </div>
+      <div class="item">
+        <button class="accordion-btn">Любопытные факты</button>
+        <div class="accordion-content">
+          <p>Удивительные свойства планет и спутников.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2025 Космос на моём экране</p>
+    <p>Источники:
+      <a href="https://www.nasa.gov/">NASA</a>,
+      <a href="https://www.roscosmos.ru/">Роскосмос</a>
+    </p>
+  </footer>
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
