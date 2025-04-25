@@ -5,6 +5,54 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Факты о Марсе — Космос на моём экране</title>
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Стили для модального окна */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .modal-content {
+      margin: 15% auto;
+      display: block;
+      width: 80%; 
+      max-width: 1000px; 
+      max-height: 80%;
+      height: auto;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 25px;
+      color: #f1f1f1;
+      font-size: 30px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close-btn:hover,
+    .close-btn:focus {
+      color: #bbb;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    /* Стили для изображения карты */
+    #mapImage {
+      width: 100%; 
+      max-width: 100%; 
+      height: auto; 
+      cursor: pointer; 
+    }
+  </style>
 </head>
 <body>
   <!-- Header/Nav -->
@@ -44,12 +92,12 @@
       </div>
     </section>
 
-    <!-- Модальное окно с картой -->
+    <!-- Кнопка для открытия карты -->
     <button id="openMap" class="btn">Показать карту посадочных зон</button>
     <div id="mapModal" class="modal">
       <div class="modal-content">
         <span class="close-btn">&times;</span>
-        <img src="images/mars-landing-zones.jpg" alt="Зоны посадки на Марсе">
+        <img id="mapImage" src="images/mars-landing-zones.jpg" alt="Зоны посадки на Марсе">
         <p>На карте отмечены зоны посадки миссий: Viking, Pathfinder, Curiosity, Perseverance.</p>
       </div>
     </div>
@@ -81,13 +129,17 @@
     const openMap = document.getElementById('openMap');
     const modal = document.getElementById('mapModal');
     const closeBtn = modal.querySelector('.close-btn');
+    const mapImage = document.getElementById('mapImage');
 
     openMap.addEventListener('click', () => {
       modal.style.display = 'block';
     });
+
     closeBtn.addEventListener('click', () => {
       modal.style.display = 'none';
     });
+
+    // Закрытие модального окна при клике вне изображения
     window.addEventListener('click', e => {
       if (e.target === modal) {
         modal.style.display = 'none';
